@@ -119,8 +119,7 @@ tb_callback = tf.keras.callbacks.TensorBoard(logdir, histogram_freq = 1)
 
 model.compile(optimizer="adam", loss='binary_crossentropy', metrics=["accuracy"])
 
-#callback = tf.keras.callbacks.EarlyStopping(monitor='accuracy', patience=4)
-
+# Fitting the model
 history = model.fit(train_generator,
                     epochs=10,steps_per_epoch = 5216// 32,
                     validation_data = validation_generator,
