@@ -149,6 +149,7 @@ for prob in pred:
        
 y_true = test_generator.classes
 
+# Creating a confusion matrix
 import seaborn as sn
 from sklearn.metrics import classification_report, confusion_matrix
 cm = confusion_matrix(y_true, y_pred)
@@ -156,6 +157,7 @@ sn.heatmap(cm, annot=True,cmap="Blues")
 # the 2 missed were false positives - the model predicted the image to have 
 # pneumonia, but the patient was actually normal
 
+# Printing the precision, recall, and f1 score
 print(classification_report(y_true, y_pred))
 # precision is true positives over selected elements
 # recall is true positives over all positives
